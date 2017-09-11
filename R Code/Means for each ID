@@ -1,0 +1,32 @@
+###9/11/17 aggregating shared files
+
+
+##files needed
+uic.opti_mcc.shared
+
+##set working directory
+setwd("~/Desktop/uic_AAP")
+
+##read in table
+a <- read.table(file="uic.opti_mcc.shared", header=T, sep="\t")
+rownames(a)<-a$Group
+dim(a)
+colnames(a)
+
+a$ID<-a$Group
+a$ID<-gsub('M0',"",a$ID)
+a$ID <- gsub( "A1", "A", a$ID)
+a$ID <- gsub( "A2", "A",a$ID)
+a$ID <- gsub("A3", "A",a$ID)
+a$ID <- gsub( "A4", "B",a$ID)
+a$ID <- gsub( "A5", "B",a$ID)
+a$ID <- gsub( "A6", "B",a$ID)
+a$ID
+
+###averaging the time points per ID
+b<-aggregate(.~ID, FUN=mean, data=a)
+b<-b[c("label",names(b)[-2])]
+b<-b[,-3]
+names(b)[2]<-paste("Group")
+
+write.table(b,file="mod2.opti_mcc.shared",sep="\t")
