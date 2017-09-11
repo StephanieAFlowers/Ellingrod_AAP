@@ -31,4 +31,4 @@ names(b)[2]<-paste("Group")
 
 brounded<-round(b[,3:8385], 0)
 
-write.table(b,file="mod2.opti_mcc.shared",sep="\t")
+write.table(b,file="mod5.opti_mcc.shared",sep="\t")
