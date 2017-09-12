@@ -5,17 +5,27 @@
 ##Below are the mothur commands use to process the sequences
 
 make.contigs(file=uic_7.files, processors=10)
+
 summary.seqs(fasta=current)
+
 screen.seqs(fasta=current, group=current, summary=current, maxambig=0, maxlength=275)
+
 summary.seqs(fasta=current)
+
 get.current()
 
 ###proccesing improved sequences
+
 unique.seqs(fasta=uic.trim.contigs.good.pick.fasta)
+
 count.seqs(name=uic.trim.contigs.good.names, group=uic.contigs.good.pick.groups)
+
 summary.seqs(count=current)
+
 align.seqs(fasta=current, reference=silva.v4.fasta)
+
 get.current()
+
 summary.seqs(fasta=uic.trim.contigs.good.pick.unique.align, count=uic.trim.contigs.good.count_table)
 screen.seqs(fasta=current, count=current, summary=current, start=1968, end=11550, maxhomop=8)
 summary.seqs(fasta=current, count=current)
