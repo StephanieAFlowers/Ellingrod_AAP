@@ -1,0 +1,183 @@
+##Files needed (see code for PCOA to learn how to make these files)
++ starch_div.thetayc.txt
++ AAP_div.thetayc.txt
+
+```{r, error=FALSE, message=FALSE, warning=FALSE}
+
+setwd("~/Desktop/uic_AAP") ##this is only the path on my computer
+```
+x <- read.table(file="starch_div.thetayc.txt", header = T)
+head(x)
+sapply(x, class)
+sapply(x, mode)
+
+x$sampleID<-as.character(x$sampleID)
+#x$AAP.Risk<-as.character(x$AAP.Risk)
+x$AAP<-as.character(x$AAP)
+x$gender<-as.character(x$gender)
+x$Starch<-as.character(x$Starch)
+
+xMale<-subset(x, gender=="1")
+xFemale <-subset(x, gender=="2")
+
+__
+
+##now plot it
+
+par (mfrow=c(1,3), xpd=NA)
+
+boxplot(invsimpson ~ Starch, data=x,  xlab= "All Data", ylim=c(0,45),ylab = "Inverse Simpson Diversity Index")
+stripchart(invsimpson ~ Starch, data = x, 
+           vertical = TRUE, method = "jitter", 
+           pch = 21,  bg= "darkslategray", col = "black", cex=1.8,
+           add = TRUE)
+text(1.5,44, "Wilcoxon Test\np=0.06")
+text(0.7,1,"A", cex=2)
+wilcox.test(invsimpson ~ Starch, data=x)
+#0.06
+
+
+boxplot(invsimpson ~ Starch, data=xFemale, xlab= "Females", ylim=c(0,45))
+stripchart(invsimpson ~ Starch, data = xFemale, 
+           vertical = TRUE, method = "jitter", 
+           pch = 21,  bg= "goldenrod4", col = "black", cex=1.8,
+           add = TRUE)
+text(1.5,44, "Wilcoxon Test\np=0.7")
+text(0.7,1,"B", cex=2)
+wilcox.test(invsimpson ~ Starch, data=xFemale)
+#p=0.7
+
+boxplot(invsimpson ~ Starch, data=xMale, xlab= "Males", ylim=c(0,45))
+stripchart(invsimpson ~ Starch, data = xMale, 
+           vertical = TRUE, method = "jitter", 
+           pch = 21,  bg= "darkred", col = "black", cex=1.8,
+           add = TRUE)
+text(1.5,44, "Wilcoxon Test\np=0.038")
+text(0.7,1,"C", cex=2)
+
+#wilcox.test(invsimpson ~ Starch, data=xMale)
+#p-value = 0.038
+
+#boxplot(invsimpson ~ gender, data=x, xlab= "All Data", ylim=c(0,45))
+#stripchart(invsimpson ~ gender, data = x, 
+#           vertical = TRUE, method = "jitter", 
+#           pch = 21,  bg= "hotpink", col = "black", cex=1.8,
+#           add = TRUE)
+#text(1.5,45, "Wilcoxon Test\np=0.029")
+#text(0.7,1,"C", cex=2.5)
+
+#wilcox.test(invsimpson ~ gender, data=x)
+#p-value = 0.02918
+__
+
+##Medication and Diversity
+x <- read.table(file="AAP_div.thetayc.txt", header = T)
+head(x)
+sapply(x, class)
+sapply(x, mode)
+
+x$sample_ID<-as.character(x$sample_ID)
+#x$AAP.Risk<-as.character(x$AAP.Risk)
+x$AAP<-as.character(x$AAP)
+x$gender<-as.character(x$gender)
+
+x$gender <- gsub ("1","Male",x$gender)
+x$gender <- gsub ("2", "Female", x$gender)
+x$AAP <- gsub ("1","AAP",x$AAP)
+x$AAP <- gsub ("2", "No_AAP", x$AAP)
+
+xMale<-subset(x, gender=="Male")
+xFemale <-subset(x, gender=="Female")
+
+
+#Now plot it
+
+par (mfrow=c(1,3), xpd=NA)
+
+
+x$AAP<-factor(x$AAP, levels=c("No_AAP", "AAP"))
+boxplot(invsimpson ~ AAP, data =x, xlab = "All Data", ylim=c(0,45), ylab = "Inverse Simpson")
+stripchart(invsimpson ~ AAP, data = x, 
+           vertical = TRUE, method = "jitter", 
+           pch = 21,  bg= "black", col = "darkgreen", cex=1.8,
+           add = TRUE)
+text(1.5, 44, "Wilcoxon Test\np 0.12")
+text(0.7,1,"A", cex=2)
+#wilcox.test(invsimpson ~ AAP, data =x)
+wilcox.test(invsimpson ~ AAP, data=x)
+
+xFemale$AAP<-factor(xFemale$AAP, levels=c("No_AAP", "AAP"))
+boxplot(invsimpson ~ AAP, data=xFemale, xlab= "Females", ylim=c(0,45))
+stripchart(invsimpson ~ AAP, data = xFemale, 
+           vertical = TRUE, method = "jitter", 
+           pch = 21,  bg= "black", col = "goldenrod4", cex=1.8,
+           add = TRUE)
+text(1.5,44, "Wilcoxon Test\np=0.018")
+text(0.7,1,"B", cex=2)
+
+xMale$AAP<-factor(xMale$AAP, levels=c("No_AAP", "AAP"))
+boxplot(invsimpson ~ AAP, data=xMale, xlab= "Males", ylim=c(0,45))
+stripchart(invsimpson ~ AAP, data = xMale, 
+           vertical = TRUE, method = "jitter", 
+           pch = 21,  bg= "black", col = "darkred", cex=1.8,
+           add = TRUE)
+text(1.5,44, "Wilcoxon Test\np=0.9")
+text(0.7,1,"C", cex=2)
+
+#wilcox.test(invsimpson ~ AAP, data=xMale)
+#p-value = 0.9
+
+
+
+#wilcox.test(invsimpson ~ AAP, data=xFemale)
+
+
+__
+
+#I want to see if I see diversity differences between non-AAP treated men and non-AAP treated women.
+
+xAAP <-subset(x, AAP=="AAP")
+xNo_AAP <-subset(x, AAP=="No_AAP")
+
+par (mfrow=c(1,3), xpd=NA)
+boxplot(invsimpson ~ gender, data =x, xlab = "All Data", ylim=c(0,45), ylab = "Inverse Simpson")
+stripchart(invsimpson ~ gender, data = x, 
+           vertical = TRUE, method = "jitter", 
+           pch = 21,  bg= "black", col = "darkgreen", cex=1.8,
+           add = TRUE)
+text(1.5, 44, "Wilcoxon Test\np 0.15")
+text(0.7,1,"A", cex=2)
+#wilcox.test(invsimpson ~ gender, data =x) #p-value = 0.1469
+
+boxplot(invsimpson ~ gender, data=xAAP, xlab= "AAP group", ylim=c(0,45))
+stripchart(invsimpson ~ gender, data = xAAP, 
+           vertical = TRUE, method = "jitter", 
+           pch = 21,  bg= "black", col = "goldenrod4", cex=1.8,
+           add = TRUE)
+text(1.5,44, "Wilcoxon Test\np=0.033")
+text(0.7,1,"B", cex=2)
+#wilcox.test(invsimpson ~ gender, data =xAAP) #p-value = 0.03387
+
+boxplot(invsimpson ~ gender, data=xNo_AAP, xlab= "Non AAP group", ylim=c(0,45))
+stripchart(invsimpson ~ gender, data = xNo_AAP, 
+           vertical = TRUE, method = "jitter", 
+           pch = 21,  bg= "black", col = "darkred", cex=1.8,
+           add = TRUE)
+text(1.5,44, "Wilcoxon Test\np=0.95")
+text(0.7,1,"C", cex=2)
+
+#wilcox.test(invsimpson ~ gender, data =xNo_AAP) #p-value = 0.9452
+
+
+
+
+
+
+
+
+
+
+
+
+
+
