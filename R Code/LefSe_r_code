@@ -1,0 +1,329 @@
+## Making a  dotplot of LefSe-identified OTUs
+
+#10.12.2017
+
+# adapted from the repository of Anna Seekatz
+setwd("~/Desktop/uic_AAP")
+
+library(plyr)
+library(reshape2)
+library(Hmisc)
+library("data.table", lib.loc="~/R/R-3.2.5/library")
+library(lattice)
+library(dplyr)
+
+# files used:
++uic.cons.taxonomy
++meta_diet_combo.txt
++uic_lefse.txt #adapted from mothur file
++starch_div.thetayc.txt
+
+##files made 
++uic.new.taxonomy.names.txt
++uic2_relOTUs.txt
++sub_all.txt
++starch_relOTUs.txt
+
+###First LefSe- for medication response
+
+# taxonomy info:
+taxonomy_file<-read.table(file="uic.cons.taxonomy", header=TRUE)
+tax <- taxonomy_file$Taxonomy
+tax <- gsub("\\(\\d*\\)", "", tax) ##gets rid on ##s
+tax <- gsub(";unclassified", "", tax) ##eliminates the unclassified at the ends
+tax <- gsub("_1", "", tax)
+tax <- gsub(";$", "", tax) #eliminates the last ;
+tax <- gsub("/.*", "", tax)
+tax <- gsub(".*;", "", tax) #eliminates any entry with a ";" after it- leaves the last classification
+tax.names <-paste(taxonomy_file$OTU, tax)
+tax.names <-gsub("000", "", tax.names)
+taxonomy_file$taxname<-tax.names
+phylum <- taxonomy_file$Taxonomy
+phylum <- gsub("\\(\\d*\\)", "", phylum)
+phylum <- gsub("Bacteria;", "", phylum)
+phylum <- gsub(";$", "", phylum)
+phylum <- gsub(";.*", "", phylum)
+taxonomy_file$phylum<-phylum
+tax<-taxonomy_file
+tax<-tax[order(tax$OTU),]
+
+write.table(tax, file="uic.new.taxonomy.names.txt", sep="\t", quote=FALSE, col.names=TRUE, row.names = FALSE)
+
+# meta and OTU files
+meta<-read.table(file="meta_diet_combo.txt", header=TRUE)
+
+##making uic2_relOTUs.txt
+##to shared file<- erased the label column
+shared<-read.table(file="AAPmedlefse.opti_mcc.shared", header=TRUE, row.names=1)
+otu<-subset(shared, select =-c( numOtus) )                                                                                                                       #gets rid of extra columns in R
+otu.filtered<-otu[,which(colSums(otu)>=100)]                                                                                                                                               #eliminates any OTUs present at less than a count of 100
+#otu.filtered<-otu.filtered[,which(colSums(otu)>=100)]                                           
+#otu.filtered<- otu.filtered[ order(row.names(otu.filtered)), ]                                                                     #order by the rownames (your samples)
+otu.matrix<-as.matrix(otu.filtered)
+
+# get relative abundance of file instead of raw counts:
+
+otu.rel<-otu.matrix/rowSums(otu.matrix)
+otu.rel<-(otu.matrix/rowSums(otu.matrix))*100
+write.table(otu.rel, file="uic2_relOTUs.txt", sep="\t", quote=FALSE, col.names=NA) ##Added ID
+
+sub.otus<-read.table(file="uic2_relOTUs.txt", header=TRUE)
+sub.otus[1:5,1:5]
+tax<-read.table(file="uic.new.taxonomy.names.txt", header=TRUE, sep="\t")
+tax[1:5,1:5]
+keep<-as.character(colnames(sub.otus[1:130])) ##now that its a character
+filtered.tax<-tax[tax$OTU %in% keep, ]
+dim(filtered.tax)
+
+colnames(sub.otus)<-filtered.tax$taxname
+sub.otus$sampleID<-rownames(sub.otus)
+colnames(sub.otus)
+
+# merge meta and OTUs:
+sub.otus$sampleID<-as.factor(sub.otus$sampleID)
+sub.all<-merge(meta, sub.otus, by.x="newID", by.y="sampleID")
+dim(sub.all)
+
+sub.all <- sub.all[,1:236]
+columns <- colnames(sub.all)
+columns <- gsub("u00", "u", columns)
+columns <- gsub("u0", "u", columns)
+columns <- gsub(" ", "_", columns)
+colnames(sub.all)<- columns
+write.table(sub.all, "sub_all.txt", sep="\t", quote=T, col.names = T, row.names = F) 
+sub.all<-read.table(file="sub_all.txt", header=TRUE)
+rownames(sub.all)<-sub.all$newID ##making the first column the row names
+
+# lefse results (filtered file to include only the significant ones)
+lefse<-read.table(file="uic_lefse.txt", header=TRUE, sep="\t")
+
+# get taxnames for lefse OTU file:
+keep<-as.character(lefse$OTU)
+filtered.tax<-tax[tax$OTU %in% keep, ]
+lefse$OTU<-filtered.tax$taxname
+
+###there are some extra zeros in the OTUs of the taxname columns-> but defined as OTUs
+otu2 <- lefse$OTU
+otu2 <- gsub("u00", "u", otu2)
+lefse$OTU <-otu2
+lefse$OTU<-as.character(lefse$OTU)
+lefse[1,1]<-"Otu33_Alistipes"
+otus.df<-sub.all[, c("newID","AAP","Otu33_Alistipes")]
+
+# now you have your list of significant otus in a dataframe!
+
+x<-otus.df
+means<-aggregate(cbind(Otu33_Alistipes) ~ AAP, data = x,FUN=function(x) mean =mean(x))
+means2<-melt(means, id.vars = "AAP", measure.vars = c("Otu33_Alistipes"))
+otu.means<-means2$value
+sds<-aggregate(cbind(Otu33_Alistipes) ~ AAP,data = x,FUN=function(x) sd =sd(x) )
+sds2<-melt(sds, id.vars = "AAP", measure.vars = c("Otu33_Alistipes"))
+otu.sds<-sds2$value
+otu.highsd<-otu.means+sds2$value
+otu.lowsd<-otu.means-sds2$value
+medians<-aggregate(cbind(Otu33_Alistipes) ~ AAP,data = x,FUN=function(x) median =median(x))
+medians2<-melt(medians, id.vars = "AAP", measure.vars = c("Otu33_Alistipes"))
+otu.medians<-medians2$value
+ses<-aggregate(cbind(Otu33_Alistipes) ~ AAP,data = x,FUN=function(x) se=sd(x)/sqrt(length(x)) )
+ses2<-melt(ses, id.vars = "AAP", measure.vars = c("Otu33_Alistipes"))
+otu.ses<-ses2$value
+otu.highse<-otu.means+ses2$value
+otu.lowse<-otu.means-ses2$value
+highq<-aggregate(cbind(Otu33_Alistipes) ~ AAP,data = x,FUN=function(x) highq=quantile(x, 0.75) )
+highq2<-melt(ses, id.vars = "AAP", measure.vars = c("Otu33_Alistipes"))
+otu.highq<-otu.medians+highq2$value
+lowq<-aggregate(cbind(Otu33_Alistipes) ~ AAP,data = x,FUN=function(x) lowq=quantile(x, 0.75) )
+lowq2<-melt(ses, id.vars = "AAP", measure.vars = c("Otu33_Alistipes"))
+otu.lowq<-otu.medians-lowq2$value
+
+labels<-paste(as.character(means2$AAP), as.character(means2$variable))
+summary<-data.frame(label=labels, 
+                    mean = otu.means, 
+                    sd = otu.sds, 
+                    se = otu.ses, 
+                    median = otu.medians, 
+                    highq = otu.highq,
+                    lowq = otu.lowq,
+                    highse = otu.highse,
+                    lowse = otu.lowse,
+                    highsd = otu.highsd,
+                    lowsd = otu.lowsd
+)
+summary$sequence <- seq(1, length(summary$label))
+summary$label <- reorder(summary$label, summary$sequence)
+summary$otu <- means2$variable
+summary$group <-means2$AAP
+
+labels <- summary$otu
+labels <- gsub("_", ": ", labels)
+summary$otu<-gsub("_", ": ", summary$otu)
+averages <- summary$mean
+ranges <- summary$se
+groupnames<-as.character(unique(summary$group))
+
+
+####Plot it
+#par(mfrow=c(2,1), mar=c(2, 3, 3, 2.1))
+
+tiff("lefse.tiff", width = 6, height = 4, units = 'in', res = 400)
+
+dotchart(averages, labels="", xlab='relative abundance (mean ± se)',  pch=21, bg=c("gold4", "darkslategray"), col="black",
+         groups=as.factor(summary$otu), cex=1,cex.axis=0.8, cex.lab=0.8,
+         xlim = c(min(averages-ranges)-0.1, max(averages+ranges)+0.1))
+segments(averages-ranges, 
+         c( 1:2  ), 
+         averages+ranges, c(1:2 ), 
+         col=c("gold4", "darkslategray"), lwd=2)
+
+legend("topright", legend=c("No AAP", "AAP"),pch=21,pt.bg=c("darkslategray","gold4"), col="black",pt.cex=1.2,cex=0.9, bty="n")
+
+dev.off()
+
+#Figure 4- starch LefSe
+# meta and OTU files
+meta<-read.table(file="starch_div.thetayc.txt", header=TRUE)
+shared<-read.table(file="starch.opti_mcc.shared", header=TRUE, row.names=2)
+shared<-shared[,-1]
+
+otu<-subset(shared, select =-c( numOtus) )                                                                                                                       
+otu.filtered<-otu[,which(colSums(otu)>=100)]                                                                                                                                           
+#otu.filtered<-otu.filtered[,which(colSums(otu)>=100)]                                           
+otu.filtered<- otu.filtered[ order(row.names(otu.filtered)), ]                                                                 
+otu.matrix<-as.matrix(otu.filtered)
+
+# get relative abundance of file instead of raw counts:
+otu.rel<-otu.matrix/rowSums(otu.matrix)
+otu.rel<-(otu.matrix/rowSums(otu.matrix))*100
+  ID <- rownames(otu.rel)
+  rownames(otu.rel) <- NULL
+  otu.rel <- cbind(ID,otu.rel)
+
+write.table(otu.rel, file="starch_relOTUs.txt", sep="\t", quote=FALSE, col.names=NA) ##Added ID
+#################################################################################################
+
+sub.otus<-read.table(file="starch_relOTUs.txt", header=TRUE, sep="\t")
+sub.otus[1:5,1:5]
+sub.otus<-sub.otus[,-1]
+rownames(sub.otus)<-sub.otus$ID
+sub.otus<-sub.otus[,-1]
+
+tax<-read.table(file="uic.new.taxonomy.names.txt", header=TRUE, sep="\t")
+tax[1:5,1:5]
+keep<-as.character(colnames(sub.otus[1:295])) ##now that its a character
+
+filtered.tax<-tax[tax$OTU %in% keep, ]
+dim(filtered.tax)
+
+colnames(sub.otus)<-filtered.tax$taxname
+sampleID <- rownames(sub.otus)
+  rownames(sub.otus) <- NULL
+  sub.otus <- cbind(sampleID,sub.otus)
+
+colnames(sub.otus)
+
+# merge meta and OTUs:
+
+sub.otus$sampleID<-as.factor(sub.otus$sampleID)
+sub.all<-merge(meta, sub.otus, by.x="sample_ID", by.y="sampleID")
+dim(sub.all)
+
+sub.all <- sub.all[,1:329]
+columns <- colnames(sub.all)
+columns <- gsub("u00", "u", columns)
+columns <- gsub("u0", "u", columns)
+columns <- gsub(" ", "_", columns)
+colnames(sub.all)<- columns
+starch_sub.all<-sub.all
+write.table(starch_sub.all, "starch_sub_all.txt", sep="\t", quote=T, col.names = T, row.names = F) 
+sub.all<-read.table(file="starch_sub_all.txt", header=TRUE)
+
+rownames(sub.all)<-sub.all$sample_ID ##making the first column the row names
+
+# lefse results (filtered file to include only the significant ones)
+lefse<-read.table(file="starch_lefse.txt", header=TRUE, sep="\t")
+
+# get taxnames for lefse OTU file:
+keep<-as.character(lefse$OTU)
+filtered.tax<-tax[tax$OTU %in% keep, ]
+lefse$OTU<-filtered.tax$taxname
+
+###there are some extra zeros in the OTUs of the taxname columns-> but defined as OTUs
+otu2 <- lefse$OTU
+otu2 <- gsub("u00", "u", otu2)
+lefse$OTU <-otu2
+lefse$OTU<-as.character(lefse$OTU)
+lefse[1,1]<-"Otu1_Bacteroides"
+lefse[2,1]<-"Otu11_Parabacteroides"
+
+#### Fig. 4: plotting lefse OTUs by starch group
+
+otus.df<-sub.all[, c("sample_ID","Starch","Otu1_Bacteroides","Otu11_Parabacteroides")]
+
+x<-otus.df
+means<-aggregate(cbind(Otu1_Bacteroides,Otu11_Parabacteroides ) ~ Starch, data = x,FUN=function(x) mean =mean(x))
+means2<-melt(means, id.vars = "Starch", measure.vars = c("Otu1_Bacteroides","Otu11_Parabacteroides"))
+otu.means<-means2$value
+sds<-aggregate(cbind(Otu1_Bacteroides,Otu11_Parabacteroides) ~ Starch,data = x,FUN=function(x) sd =sd(x) )
+sds2<-melt(sds, id.vars = "Starch", measure.vars = c("Otu1_Bacteroides","Otu11_Parabacteroides"))
+otu.sds<-sds2$value
+otu.highsd<-otu.means+sds2$value
+otu.lowsd<-otu.means-sds2$value
+medians<-aggregate(cbind(Otu1_Bacteroides,Otu11_Parabacteroides) ~ Starch,data = x,FUN=function(x) median =median(x))
+medians2<-melt(medians, id.vars = "Starch", measure.vars = c("Otu1_Bacteroides","Otu11_Parabacteroides"))
+otu.medians<-medians2$value
+ses<-aggregate(cbind(Otu1_Bacteroides,Otu11_Parabacteroides) ~ Starch,data = x,FUN=function(x) se=sd(x)/sqrt(length(x)) )
+ses2<-melt(ses, id.vars = "Starch", measure.vars = c("Otu1_Bacteroides","Otu11_Parabacteroides"))
+otu.ses<-ses2$value
+otu.highse<-otu.means+ses2$value
+otu.lowse<-otu.means-ses2$value
+highq<-aggregate(cbind(Otu1_Bacteroides,Otu11_Parabacteroides) ~ Starch,data = x,FUN=function(x) highq=quantile(x, 0.75) )
+highq2<-melt(ses, id.vars = "Starch", measure.vars = c("Otu1_Bacteroides","Otu11_Parabacteroides"))
+otu.highq<-otu.medians+highq2$value
+lowq<-aggregate(cbind(Otu1_Bacteroides,Otu11_Parabacteroides) ~ Starch,data = x,FUN=function(x) lowq=quantile(x, 0.75) )
+lowq2<-melt(ses, id.vars = "Starch", measure.vars = c("Otu1_Bacteroides","Otu11_Parabacteroides"))
+otu.lowq<-otu.medians-lowq2$value
+
+# add all the data together:
+labels<-paste(as.character(means2$Starch), as.character(means2$variable))
+summary<-data.frame(label=labels, 
+                    mean = otu.means, 
+                    sd = otu.sds, 
+                    se = otu.ses, 
+                    median = otu.medians, 
+                    highq = otu.highq,
+                    lowq = otu.lowq,
+                    highse = otu.highse,
+                    lowse = otu.lowse,
+                    highsd = otu.highsd,
+                    lowsd = otu.lowsd
+)
+summary$sequence <- seq(1, length(summary$label))
+summary$label <- reorder(summary$label, summary$sequence)
+summary$otu <- means2$variable
+summary$group <-means2$Starch
+
+labels <- summary$otu
+labels <- gsub("_", ": ", labels)
+summary$otu<-gsub("_", ": ", summary$otu)
+averages <- summary$mean
+ranges <- summary$se
+groupnames<-as.character(unique(summary$group))
+
+
+####Plot it(Figure 4)
+#par(mfrow=c(2,1), mar=c(2, 3, 3, 2.1))
+
+tiff("starch_lefse.tiff", width = 5.5, height = 4.5, units = 'in', res = 400)
+
+dotchart(averages, labels="", xlab='relative abundance (mean ± se)',  pch=21, bg=c("darkslategray", "gold4"), col="black",
+         groups=as.factor(summary$otu), cex=1,cex.axis=0.8, cex.lab=0.8,
+         xlim = c(min(averages-ranges)-0.1, max(averages+ranges)+0.1))
+segments(averages-ranges, 
+         c( 5:6 , 1:2 ), 
+         averages+ranges, c(5:6, 1:2 ), 
+         col=c("darkslategray", "gold4"), lwd=2)
+
+legend("topright", legend=c("Before Starch", "During Starch"),pch=21,pt.bg=c("gold4", "darkslategray"), col="black",pt.cex=1.2,cex=0.8, bty="n")
+
+dev.off()
+
