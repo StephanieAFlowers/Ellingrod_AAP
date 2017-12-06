@@ -1,0 +1,185 @@
+# PCOA or NMDS oordination graphs, with biplot coordinates of significant OTUs for medication and starch use
+### Stephanie Flowers
+### 9.12.17
+###This code has been adapted in part from the repositoty of Anna M. Seekatz
+
+#Packages needed
+library(shape)
+library(plyr)
+library(reshape2)
+library(gplots)
+
+
+````
+#Files needed
+
++ Metadata_BMI.txt
++ med.opti_mcc.groups.summary
++ AAPmed.opti_mcc.thetayc.0.03.lt.ave.pcoa.axes
++ AAPmed.opti_mcc.thetayc.0.03.lt.ave.nmds.axes
+
+The files you will need for this include:
+  + AAP_div.thetayc.txt (see below on how to create this)
+To add biplot coordinates, you will need the following files generated from mothur corr.axes function:
++ AAPmed.opti_mcc.0.03.subsample.spearman.corr.axes ##pcoa
+
+```````{r}
+
+#to create the 'AAP_div.thetayc.txt' file:
+
+AAP.var<-read.table(file="Metadata_BMI.txt", header = T, sep ="\t" ) 
+head(AAP.var)
+colnames(AAP.var)[which(names(AAP.var) == "ID")] <- "sample_ID"	
+AAP.var<-AAP.var[-1,]
+AAP.var<-AAP.var[-3,]
+AAP.var$sample_ID<-gsub("M0", "", AAP.var$sample_ID)
+
+AAP.sum<-read.table(file="med.opti_mcc.groups.summary", header=TRUE)
+AAP.sum$Group<-gsub("[AB]", "", AAP.sum$Group)
+head(AAP.sum)
+colnames(AAP.sum)[which(names(AAP.sum) == "Group")] <- "sample_ID"	
+AAP.sum$sample_ID
+#AAP.sum$sample_ID<-gsub("A", "", AAP.sum$sample_ID)
+
+AAP.pcoa<-read.table(file="AAP2med.opti_mcc.thetayc.0.03.lt.ave.pcoa.txt", header=TRUE)
+colnames(AAP.pcoa)[which(names(AAP.pcoa) == "group")] <- "sample_ID"
+AAP.pcoa$sample_ID <- gsub("A","",AAP.pcoa$sample_ID)
+
+AAP.nmds<-read.table(file="AAPmed.opti_mcc.thetayc.0.03.lt.ave.nmds.axes", header=TRUE)
+colnames(AAP.nmds)[which(names(AAP.nmds) == "group")] <- "sample_ID"
+AAP.nmds$sample_ID<-gsub("A", "", AAP.nmds$sample_ID)
+``````
+#combine files for a 'master' file:
+
+v<-merge(AAP.var, AAP.sum, by.x=c("sample_ID"), by.y=c("sample_ID"))
+v1<-v[,c("sample_ID","Age","Race","gender","Yrs.of.edu","AAP","MS","BZD","AD","Hyperlipidemia","HTN","BP.systolic","BP.Diastolic","MetX","Currently.smokes","Current.alcohol","Total.activity.score","Hip_Waist","Hip_Waist2","BMI_before","BMI_during" ,"RHI.Visit.1","RHI.Visit.2","invsimpson", "sobs", "nseqs")]  #this picks the specific columns
+
+v2<-merge(v1, AAP.pcoa, by.x=c("sample_ID"), by.y=c("sample_ID"))
+v2<-v2[,c("sample_ID","Age","Race","gender","Yrs.of.edu","AAP","MS","BZD","AD","Hyperlipidemia","HTN","BP.systolic","BP.Diastolic","MetX","Currently.smokes","Current.alcohol","Total.activity.score","Hip_Waist","Hip_Waist2","BMI_before","BMI_during" ,"RHI.Visit.1","RHI.Visit.2","invsimpson", "sobs", "nseqs", "axis1", "axis2", "axis3", "axis4")] 
+v2<-rename(v2, c("axis1"="pcoa_axis1", "axis2"="pcoa_axis2", "axis3"="pcoa_axis3", "axis4"="pcoa_axis4"))
+v3<-merge(v2, AAP.nmds, by.x=c("sample_ID"), by.y=c("sample_ID"))
+v3<-v3[,c("sample_ID","Age","Race","gender","Yrs.of.edu","AAP","MS","BZD","AD","Hyperlipidemia","HTN","BP.systolic","BP.Diastolic","MetX","Currently.smokes","Current.alcohol","Total.activity.score","Hip_Waist","Hip_Waist2","BMI_before","BMI_during" ,"RHI.Visit.1","RHI.Visit.2","invsimpson", "sobs", "nseqs", "pcoa_axis1", "pcoa_axis2", "pcoa_axis3", "pcoa_axis4", "axis1", "axis2", "axis3")] 
+AAP.div<-rename(v3, c("axis1"="nmds_axis1", "axis2"="nmds_axis2", "axis3"="nmds_axis3"))
+head(AAP.div)
+
+write.table(AAP.div, file="AAP_div.thetayc.txt", quote=FALSE, sep="\t", col.names=NA)
+#this file should have all of your metadata, diversity measures, and pcoa/nmds axes
+```
+
+NMDS in R for medication groups
+
+nmds<-read.table(file="AAP_div.thetayc.txt", header=TRUE)
+class(nmds$AAP)  #if integer data type, must change to character
+nmds$AAP<-as.character(nmds$AAP)
+
+tiff("Medication_nmds.tiff", width = 6, height = 6, units = 'in', res = 400)
+plot(nmds$nmds_axis2~nmds$nmds_axis1, pch=19, col=AAP.col(nmds$AAP), xlab="NMDS axis 1", ylab="NMDS axis 2")
+legend("topright", col=c("gray44","turquoise3"), pch=19,legend=c("AAP", "No AAP"), bty="n", cex=0.8)
+text(x=0.55, y=0.62, "AMOVA=0.36", cex=0.8) 
+dev.off()
+
+##color palettes:
+#Color palette by medication group:
+AAP.col <- function(n) {
+colorvec <- vector(mode="character", length=length(n))
+for (i in 1:length(n)) {
+colorvec[i] = "black"
+if ( n[i] == "1" ) {
+colorvec[i] = "gray44"
+}
+if (n[i] == "2" ) {
+colorvec[i] = "turquoise3"
+}
+
+}
+c(colorvec)
+}
+
+
+
+
+#PCOA/NMDS for starch users
+
+
+##files needed
++Metadata_starch.txt
++starch.opti_mcc.0.03.subsample.spearman.corr.axes
++starch.opti_mcc.thetayc.0.03.lt.ave.nmds.axes
++starch.opti_mcc.thetayc.0.03.lt.ave.pcoa.axes
+
+files prodcued with this code
+starch_div.thetayc.txt
+
+starch.var<-read.table(file="Metadata_starch.txt", header = T, sep ="\t" ) 
+head(starch.var)
+
+starch.sum<-read.table(file="starch_opti_mcc.groups_summary.txt", header=TRUE, fileEncoding="UCS-2LE")
+head(starch.sum)
+colnames(starch.sum)[which(names(starch.sum) == "Group")] <- "sample_ID"	
+starch.sum$sample_ID
+
+starch.pcoa<-read.table(file="starch.opti_mcc.thetayc.0.03.lt.ave.pcoa.axes", header=TRUE)
+colnames(starch.pcoa)[which(names(starch.pcoa) == "group")] <- "sample_ID"
+
+
+starch.nmds<-read.table(file="starch.opti_mcc.thetayc.0.03.lt.ave.nmds.axes", header=TRUE)
+colnames(starch.nmds)[which(names(starch.nmds) == "group")] <- "sample_ID"
+
+``````
+#combine files for a 'master' file:
+#add sample information for 'group1':
+v<-merge(starch.var, starch.sum, by.x=c("sample_ID"), by.y=c("sample_ID"))
+v1<-v[,c("sample_ID","Age","Race","gender","Yrs.of.edu","AAP","MS","BZD","AD","Starch","Hyperlipidemia","HTN","BP.systolic","BP.Diastolic","MetX","Currently.smokes","Current.alcohol","Total.activity.score","Hip_Waist","Hip_Waist2","BMI_before","BMI_during" ,"RHI.Visit.1","RHI.Visit.2","invsimpson", "sobs", "nseqs")]  #this picks the specific columns
+
+v2<-merge(v1, starch.pcoa, by.x=c("sample_ID"), by.y=c("sample_ID"))
+v2<-v2[,c("sample_ID","Age","Race","gender","Yrs.of.edu","AAP","MS","BZD","AD","Starch","Hyperlipidemia","HTN","BP.systolic","BP.Diastolic","MetX","Currently.smokes","Current.alcohol","Total.activity.score","Hip_Waist","Hip_Waist2","BMI_before","BMI_during" ,"RHI.Visit.1","RHI.Visit.2","invsimpson", "sobs", "nseqs", "axis1", "axis2", "axis3", "axis4")] 
+v2<-rename(v2, c("axis1"="pcoa_axis1", "axis2"="pcoa_axis2", "axis3"="pcoa_axis3", "axis4"="pcoa_axis4"))
+v3<-merge(v2, starch.nmds, by.x=c("sample_ID"), by.y=c("sample_ID"))
+v3<-v3[,c("sample_ID","Age","Race","gender","Yrs.of.edu","AAP","MS","BZD","AD","Starch","Hyperlipidemia","HTN","BP.systolic","BP.Diastolic","MetX","Currently.smokes","Current.alcohol","Total.activity.score","Hip_Waist","Hip_Waist2","BMI_before","BMI_during" ,"RHI.Visit.1","RHI.Visit.2","invsimpson", "sobs", "nseqs", "pcoa_axis1", "pcoa_axis2", "pcoa_axis3", "pcoa_axis4", "axis1", "axis2", "axis3")] 
+starch.div<-rename(v3, c("axis1"="nmds_axis1", "axis2"="nmds_axis2", "axis3"="nmds_axis3"))
+head(starch.div)
+#this file should have all of your metadata, diversity measures, and pcoa/nmds axes
+``````
+
+write.table(starch.div, file="starch_div.thetayc.txt", quote=FALSE, sep="\t", col.names=NA)
+
+# you now have a file to proceed
+
+
+###making a color function
+Starch.col <- function(n) {
+  colorvec <- vector(mode="character", length=length(n))
+  for (i in 1:length(n)) {
+    colorvec[i] = "light grey"
+    if ( n[i] == "Before" ) {
+      colorvec[i] = "blue"
+    }
+    if (n[i] == "During" ) {
+      colorvec[i] = "darkolivegreen4 "
+    }
+    
+  }
+  c(colorvec)
+}
+
+
+x<-read.table(file="nmda_starch.txt", header=T, sep="\t")
+nmds<-read.table(file="starch_div.thetayc.txt", header=TRUE)
+
+
+class(nmds$Starch)  #if integer data type, must change to character
+nmds$Starch<-as.character(nmds$Starch)
+
+#tiff("Starch3_nmds.tiff", width = 6, height = 6, units = 'in', res = 400)
+
+
+plot(nmds$nmds_axis2~nmds$nmds_axis1, pch=19, col=Starch.col(nmds$Starch), xlab="NMDS axis 1", ylab="NMDS axis 2")
+arrows(x$bnmds_axis1,x$bnmds_axis2, x$dnmds_axis1, x$dnmds_axis2, lwd=1, length=.1)
+legend("bottomleft", col=c("blue","darkolivegreen4"), pch=19,legend=c("Before Starch", "During Starch" ), bty="n", cex=0.8)
+pu <- par()$usr 
+x <- pu[1]  *0.7
+y <-  pu[4] * 0.9
+text(x=0.47, y=0.49, "HOMOVA=0.026*", cex=0.8) 
+
+#dev.off()
+
