@@ -1,0 +1,182 @@
+Sample Name	Organism	Collection Date	Broad Scale Environmental Context	Local Environmental Context	Environmental Medium	geographic location	Host	latitude and longitude	Biomaterial Provider	Replicate	Age of Host	Biomaterial Provider	Sex of Host	Race of host	Treatment 1	Treatment 2
+M002A1	Bacteria	2016	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 2:1	41	Flowers	male	white	AAP	none
+M002A2	Bacteria	2016	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 2:2	41	Flowers	male	white	AAP	none
+M002A3	Bacteria	2016	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 2:3	41	Flowers	male	white	AAP	none
+M002A4	Bacteria	2016	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 2:4	41	Flowers	male	white	AAP	Resistant_Starch
+M002A5	Bacteria	2016	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 2:5	41	Flowers	male	white	AAP	Resistant_Starch
+M002A6	Bacteria	2016	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 2:6	39	Flowers	male	white	AAP	Resistant_Starch
+M003A1	Bacteria	2016	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 3:1	39	Flowers	male	white	AAP	none
+M003B3	Bacteria	2016	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 3:2	39	Flowers	male	white	AAP	Resistant_Starch
+M003B1	Bacteria	2016	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 3:3	39	Flowers	male	white	AAP	Resistant_Starch
+M003A4	Bacteria	2016	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 3:4	39	Flowers	male	white	AAP	Resistant_Starch
+M003A5	Bacteria	2016	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 3:5	39	Flowers	male	white	AAP	none
+M003A6	Bacteria	2016	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 3:6	39	Flowers	male	white	AAP	none
+M005A1	Bacteria	2016	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 5:1	62	Flowers	male	white	AAP	none
+M005B1	Bacteria	2016	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 5:2	62	Flowers	male	white	AAP	Resistant_Starch
+M005C1	Bacteria	2016	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 5:3	62	Flowers	male	white	AAP	Resistant_Starch
+M005A4	Bacteria	2016	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 5:4	62	Flowers	male	white	AAP	Resistant_Starch
+M005A5	Bacteria	2016	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 5:5	62	Flowers	male	white	AAP	none
+M005A6	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 5:6	62	Flowers	male	white	AAP	none
+M007A1	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 7:1	60	Flowers	female	white	AAP	none
+M007A2	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 7:2	60	Flowers	female	white	AAP	none
+M007A3	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 7:3	60	Flowers	female	white	AAP	none
+M007AE	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 7:4	60	Flowers	female	white	AAP	Resistant_Starch
+M007A5	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 7:5	60	Flowers	female	white	AAP	Resistant_Starch
+M007A6	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 7:6	60	Flowers	female	white	AAP	Resistant_Starch
+M008A1	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 8:1	44	Flowers	female	white	AAP	none
+M008A2	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 8:2	44	Flowers	female	white	AAP	none
+M008A3	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 8:3	44	Flowers	female	white	AAP	none
+M008A4	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 8:4	44	Flowers	female	white	AAP	Resistant_Starch
+M008A5	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 8:5	44	Flowers	female	white	AAP	Resistant_Starch
+M008A6	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 8:6	44	Flowers	female	white	AAP	Resistant_Starch
+M009A1	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 9:1	48	Flowers	female	black	AAP	none
+M009A2	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 9:2	48	Flowers	female	black	AAP	none
+M009A3	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 9:3	48	Flowers	female	black	AAP	none
+M009A4	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 9:4	48	Flowers	female	black	AAP	Resistant_Starch
+M009A5	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 9:5	48	Flowers	female	black	AAP	Resistant_Starch
+M009A6	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 9:6	48	Flowers	female	black	AAP	Resistant_Starch
+M010A1	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 10:3	53	Flowers	female	white	AAP	none
+M010E	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 10:1	53	Flowers	female	white	AAP	none
+M010A3	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 10:2	53	Flowers	female	white	AAP	none
+M011A1	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 11:1	60	Flowers	male	other	AAP	none
+M011A2	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 11:2	60	Flowers	male	other	AAP	none
+M011A3	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 113	60	Flowers	male	white	AAP	none
+M011E2	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 11:4	60	Flowers	male	white	AAP	Resistant_Starch
+M011A5	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 115	60	Flowers	male	white	AAP	Resistant_Starch
+M011A6	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 11:6	60	Flowers	male	white	AAP	Resistant_Starch
+M012A1	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 12:1	60	Flowers	male	white	AAP	none
+M012A2	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 12:2	60	Flowers	male	white	AAP	none
+M012A3	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 12:3	60	Flowers	male	white	AAP	none
+M012A4	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 12:4	60	Flowers	male	white	AAP	Resistant_Starch
+M012A5	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 12:5	60	Flowers	male	white	AAP	Resistant_Starch
+M012A6	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 12:6	60	Flowers	male	white	AAP	Resistant_Starch
+M013A1	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 13:1	62	Flowers	male	white	AAP	none
+M013A2	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 13:2	62	Flowers	male	white	AAP	none
+M013A3	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 13:3	62	Flowers	male	white	AAP	none
+M013A4	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 13:4	62	Flowers	male	white	AAP	Resistant_Starch
+M013A5	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 13:5	62	Flowers	male	white	AAP	Resistant_Starch
+M013A6	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 13:6	62	Flowers	male	white	AAP	Resistant_Starch
+M014A1	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 14:1	54	Flowers	male	white	AAP	none
+M014A2	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 14:2	54	Flowers	male	white	AAP	none
+M014A3	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 14:3	54	Flowers	male	white	AAP	none
+M014A4	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 14:4	54	Flowers	male	white	AAP	Resistant_Starch
+M014A5	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 14:5	54	Flowers	male	white	AAP	Resistant_Starch
+M014A6	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 14:6	54	Flowers	male	white	AAP	Resistant_Starch
+M015A1	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 15:1	51	Flowers	male	white	AAP	none
+M015AE	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 15:2	51	Flowers	male	white	AAP	none
+M015A3	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 15:3	51	Flowers	male	white	AAP	none
+M015A4	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 15:4	51	Flowers	male	white	AAP	Resistant_Starch
+M015A5	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 15:5	51	Flowers	male	white	AAP	Resistant_Starch
+M015A6	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 15:6	51	Flowers	male	black	AAP	Resistant_Starch
+M016A1	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 16:1	57	Flowers	male	white	AAP	none
+M016A2	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 16:2	57	Flowers	male	white	AAP	none
+M016A3	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 16:3	57	Flowers	male	white	AAP	none
+M016A4	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 16:4	57	Flowers	male	white	AAP	Resistant_Starch
+M016A5	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 16:5	57	Flowers	male	white	AAP	Resistant_Starch
+M016A6	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 16:6	57	Flowers	male	white	AAP	Resistant_Starch
+M017A1	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 17:1	44	Flowers	male	black	AAP	none
+M017A2	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 17:2	44	Flowers	male	black	AAP	none
+M017A3	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 17:3	44	Flowers	male	black	AAP	none
+M017A7	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 17:4	44	Flowers	male	black	AAP	Resistant_Starch
+M017A5	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 17:5	44	Flowers	male	black	AAP	Resistant_Starch
+M017A6	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 17:6	44	Flowers	male	black	AAP	Resistant_Starch
+M018A1	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 18:1	62	Flowers	female	white	AAP	none
+M018A2	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 18:2	62	Flowers	female	white	AAP	none
+M018A3	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 18:3	62	Flowers	female	white	AAP	none
+M018A4	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 18:4	62	Flowers	female	white	AAP	Resistant_Starch
+M018A5	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 18:5	62	Flowers	female	white	AAP	Resistant_Starch
+M018A6	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 18:6	62	Flowers	female	white	AAP	Resistant_Starch
+M019A5	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 19:1	57	Flowers	female	black	AAP	none
+M019A6	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 19:2	57	Flowers	female	black	AAP	none
+M020A1	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 19:3	57	Flowers	female	black	AAP	none
+M020A2	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 19:4	57	Flowers	female	black	AAP	Resistant_Starch
+M020A3	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 19:5	57	Flowers	female	black	AAP	Resistant_Starch
+M020A4	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 20:1	69	Flowers	male	white	AAP	none
+M020A5	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 20:2	69	Flowers	male	white	AAP	none
+M020AE	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 20:3	69	Flowers	male	white	AAP	none
+M021AE	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 20:4	69	Flowers	male	white	AAP	Resistant_Starch
+M021A4	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 20:5	69	Flowers	male	white	AAP	Resistant_Starch
+M021A5	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 20:6	69	Flowers	male	white	AAP	Resistant_Starch
+M021A6	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 21:1	72	Flowers	female	white	AAP	none
+M023A1	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 21:2	72	Flowers	female	white	AAP	Resistant_Starch
+M023A2	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 21:3	72	Flowers	female	white	AAP	Resistant_Starch
+M023A3	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 21:4	72	Flowers	female	white	AAP	Resistant_Starch
+M023A4	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 23:1	56	Flowers	female	white	AAP	none
+M023A5	Bacteria	2016	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 23:2	56	Flowers	female	white	AAP	none
+M023A6	Bacteria	2016	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 23:3	56	Flowers	female	white	AAP	none
+M024A1	Bacteria	2016	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 23:4	56	Flowers	female	white	AAP	Resistant_Starch
+M024A2	Bacteria	2016	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 23:5	56	Flowers	female	white	AAP	Resistant_Starch
+M024A3	Bacteria	2016	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 23:6	56	Flowers	female	white	AAP	Resistant_Starch
+M024A4	Bacteria	2016	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 24:1	57	Flowers	male	white	AAP	none
+M024A5	Bacteria	2016	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 24:2	57	Flowers	male	white	AAP	none
+M024A6	Bacteria	2016	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 24:3	57	Flowers	male	white	AAP	none
+M025A1	Bacteria	2016	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 24:4	57	Flowers	male	white	AAP	Resistant_Starch
+M025E1	Bacteria	2016	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 24:5	57	Flowers	male	white	AAP	Resistant_Starch
+M025A3	Bacteria	2016	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 24:6	57	Flowers	male	white	AAP	Resistant_Starch
+M050A1	Bacteria	2016	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 25:1	31	Flowers	female	black	AAP	none
+M050B1	Bacteria	2016	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 25:2	31	Flowers	female	black	AAP	none
+M050B3	Bacteria	2016	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 25:3	31	Flowers	female	black	AAP	none
+M052A1	Bacteria	2016	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 50:1	63	Flowers	male	white	No_AAP	none
+M052A2	Bacteria	2016	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 50:2	63	Flowers	male	white	No_AAP	none
+M052A3	Bacteria	2016	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 50:3	63	Flowers	male	white	No_AAP	none
+M053B1	Bacteria	2016	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 52:1	58	Flowers	male	white	No_AAP	none
+M053B3	Bacteria	2016	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 52:2	58	Flowers	male	white	No_AAP	none
+M053A3	Bacteria	2016	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 52:3	58	Flowers	male	white	No_AAP	none
+M054A1	Bacteria	2016	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 53:1	61	Flowers	female	white	No_AAP	none
+M054A2	Bacteria	2016	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 53:2	61	Flowers	female	white	No_AAP	none
+M054A3	Bacteria	2016	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 53:3	61	Flowers	female	white	No_AAP	none
+M055A1	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 54:1	69	Flowers	male	white	No_AAP	none
+M055A2	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 54:2	69	Flowers	male	white	No_AAP	none
+M055A3	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 54:3	69	Flowers	male	white	No_AAP	none
+M056B1	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 55:1	74	Flowers	male	white	No_AAP	none
+M056B2	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 55:2	74	Flowers	male	white	No_AAP	none
+M056B3	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 55:3	74	Flowers	male	white	No_AAP	none
+M057A1	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 56:1	NA	Flowers	male	white	No_AAP	none
+M057A2	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 56:2	NA	Flowers	male	white	No_AAP	none
+M057A3	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 56:3	NA	Flowers	male	white	No_AAP	none
+M058A1	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 57:1	30	Flowers	female	white	No_AAP	none
+M058A2	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 57:2	30	Flowers	female	white	No_AAP	none
+M058A3	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 57:3	30	Flowers	female	white	No_AAP	none
+M059A1	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 58:1	52	Flowers	female	white	No_AAP	none
+M059A2	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 58:2	52	Flowers	female	white	No_AAP	none
+M061A1	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 58:3	52	Flowers	female	white	No_AAP	none
+M061A2	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 59:1	36	Flowers	female	white	No_AAP	none
+M061A3	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 59:2	36	Flowers	female	white	No_AAP	none
+M062A1	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 61:1	56	Flowers	male	white	No_AAP	none
+M062A2	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 61:2	56	Flowers	male	white	No_AAP	none
+M062A3	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 61:3	56	Flowers	male	white	No_AAP	none
+M063A1	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 62:1	57	Flowers	female	white	No_AAP	none
+M063A2	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 62:2	57	Flowers	female	white	No_AAP	none
+M063A3	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 62:3	57	Flowers	female	white	No_AAP	none
+M065A2	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 63:1	50	Flowers	male	black	No_AAP	none
+M065A3	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 63:2	50	Flowers	male	black	No_AAP	none
+M065E1	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 63:3	50	Flowers	male	black	No_AAP	none
+M066A1	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 66:2	33	Flowers	male	other	No_AAP	none
+M066A2	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 66:3	33	Flowers	male	other	No_AAP	none
+M066A3	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 66:1	33	Flowers	male	other	No_AAP	none
+M068A4	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 68:1	33	Flowers	male	white	No_AAP	none
+M068A5	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 68:2	33	Flowers	male	white	No_AAP	none
+M070A1	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 70:1	28	Flowers	male	white	No_AAP	none
+M070A2	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 70:2	28	Flowers	male	white	No_AAP	none
+M070E1	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 70:3	28	Flowers	male	white	No_AAP	none
+M071A1	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 70:1	61	Flowers	male	white	No_AAP	none
+M071A2	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 70:2	61	Flowers	male	white	No_AAP	none
+M071A3	Bacteria	2017	Fecal Sample	Fecal Sample	Fecal Sample	USA: Michigan	Homo sapiens	42.2808 N 83.7430 W	Flowers	replicate = biological replicate 70:3	61	Flowers	male	white	No_AAP	none
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
